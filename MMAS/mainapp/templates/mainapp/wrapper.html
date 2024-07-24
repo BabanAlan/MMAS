@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/wrapper.css' %}">
+</head>
+<body>
+    <header>
+        <div id="studio-logo">
+            <img id="logo-mmas" src="{% static 'images/logo-mmas.png' %}" alt="Московская студия боевых искусств">
+        </div>
+        <div id="studio-text">
+            МОСКОВСКАЯ СТУДИЯ БОЕВЫХ ИСКУССТВ
+        </div>
+    </header>
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+    <footer>
+
+    </footer>
+</body>
+</html>
