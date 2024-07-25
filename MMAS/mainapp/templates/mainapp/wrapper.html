@@ -8,10 +8,41 @@
 <body>
     <header>
         <div id="studio-logo">
-            <img id="logo-mmas" src="{% static 'images/logo-mmas.png' %}" alt="Московская студия боевых искусств">
+            <a href=""><img id="logo-mmas" src="{% static 'images/logo-mmas.png' %}" alt="Московская студия боевых искусств"></a>
         </div>
-        <div id="studio-text">
-            МОСКОВСКАЯ СТУДИЯ БОЕВЫХ ИСКУССТВ
+        
+        <div id="menu">
+            <div class="menu-item">
+                <a href="" onmouseover="showSub1()" onmouseout="hideSub1()">О нас</a>
+                <div class="sub-menu" id="sub-menu1" aria-disabled="true" onmouseover="showSub1()" onmouseout="hideSub1()">
+                    <div class="sub-menu-item" onmouseover="subHoverShow(0, 0)" onmouseout="subHoverHide(0, 0)">
+                        <a href="" class="sub-menu-item-link">Студия</a>
+                    </div>
+                    <div class="sub-menu-item" onmouseover="subHoverShow(0, 1)" onmouseout="subHoverHide(0, 1)">
+                        <a href="" class="sub-menu-item-link">Направления</a>
+                    </div>
+                    <div class="sub-menu-item" onmouseover="subHoverShow(0, 2)" onmouseout="subHoverHide(0, 2)">
+                        <a href="" class="sub-menu-item-link">Инструктора</a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="" onmouseover="showSub2()" onmouseout="hideSub2()">Мероприятия</a>
+                <div class="sub-menu" id="sub-menu2" onmouseover="showSub2()" onmouseout="hideSub2()">
+                    <div class="sub-menu-item" onmouseover="subHoverShow(1, 0)" onmouseout="subHoverHide(1, 0)">
+                        <a href="" class="sub-menu-item-link">Соревнования</a>
+                    </div>
+                    <div class="sub-menu-item" onmouseover="subHoverShow(1, 1)" onmouseout="subHoverHide(1, 1)">
+                        <a href="" class="sub-menu-item-link">Мастер-классы</a>
+                    </div>
+                    <div class="sub-menu-item" onmouseover="subHoverShow(1,2)" onmouseout="subHoverHide(1, 2)">
+                        <a href="" class="sub-menu-item-link">Междунардные</a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="">Контакты</a>
+            </div>
         </div>
     </header>
     <div id="content">
@@ -20,5 +51,53 @@
     <footer>
 
     </footer>
+
+    <script>
+        function showSub1() {
+            var subMenu = document.getElementById("sub-menu1")
+            subMenu.style.display = "block";
+            subMenu.style.animation = "show 200ms 1"
+            subMenu.style.marginTop = "10px";
+            subMenu.style.opacity = "100%";
+        }
+
+        function hideSub1() {
+            var subMenu = document.getElementById("sub-menu1")
+            subMenu.style.animation = "hide 200ms 1"
+            subMenu.style.marginTop = "30px";
+            subMenu.style.opacity = "0%";
+            subMenu.style.display = "none";
+        }
+
+        function showSub2() {
+            var subMenu = document.getElementById("sub-menu2")
+            subMenu.style.display = "block";
+            subMenu.style.animation = "show 200ms 1"
+            subMenu.style.marginTop = "10px";
+            subMenu.style.opacity = "100%";
+        }
+
+        function hideSub2() {
+            var subMenu = document.getElementById("sub-menu2")
+            subMenu.style.animation = "hide 200ms 1"
+            subMenu.style.marginTop = "30px";
+            subMenu.style.opacity = "0%";
+            subMenu.style.display = "none";
+        }
+
+        function subHoverShow(parent, child){
+            row = document.getElementsByClassName("sub-menu")[parent].children[child].children[0];
+            row.style.borderRadius = "50px";
+            row.style.backgroundColor = "#dfaa18";
+        }
+
+        function subHoverHide(parent, child){
+            row = document.getElementsByClassName("sub-menu")[parent].children[child].children[0];
+            row.style.backgroundColor = "transparent";
+        }
+        
+
+    </script>
+        
 </body>
 </html>
